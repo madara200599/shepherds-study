@@ -1,0 +1,46 @@
+:root{
+  --ink:#1f2937; --muted:#5b6472; --paper:#faf7f0; --card:#ffffff;
+  --gold:#a07d2c; --gold-soft:#f3e9d2; --line:#e5ddc9; --green:#2f5d3a;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--paper);line-height:1.6}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+.hero{background:linear-gradient(160deg,#22384f,#2f5d3a);color:#fdfbf5;padding:56px 0 44px}
+.hero .eyebrow{color:#d9c48a}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-family:system-ui,sans-serif}
+.hero h1{font-size:3rem;margin:.2em 0 .3em;line-height:1.05}
+.tagline{font-size:1.2rem;max-width:640px}
+.note{font-size:.9rem;opacity:.85;max-width:640px;font-family:system-ui,sans-serif}
+main{padding:28px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin-bottom:20px;box-shadow:0 2px 10px rgba(31,41,55,.05)}
+h2{margin-top:0;color:#22384f}
+h3{margin-top:0;color:var(--green)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
+label{font-family:system-ui,sans-serif;font-size:.9rem;font-weight:600;display:flex;flex-direction:column;gap:6px}
+input,select{font:inherit;padding:10px 12px;border:1px solid #cbd2c9;border-radius:8px;background:#fff;color:var(--ink)}
+input:focus,select:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+button{font-family:system-ui,sans-serif;font-size:.95rem;font-weight:600;cursor:pointer;border:0;border-radius:8px;padding:11px 18px;background:var(--green);color:#fff}
+button:hover{filter:brightness(1.08)}
+button:disabled{opacity:.6;cursor:wait}
+button.ghost{background:var(--gold-soft);color:#6b5518}
+.engine{font-size:.82rem;color:var(--muted);font-family:system-ui,sans-serif;margin-top:14px}
+.status{margin-top:16px;padding:12px 14px;border-radius:8px;background:#fff8e1;border:1px solid #e8d48a;font-family:system-ui,sans-serif;font-size:.92rem}
+.result-head h2{font-size:1.7rem}
+.bigidea{font-size:1.1rem}
+.meta{color:var(--muted);font-family:system-ui,sans-serif;font-size:.85rem}
+blockquote{margin:0;padding:14px 18px;background:var(--gold-soft);border-left:4px solid var(--gold);font-style:italic}
+.outline li{margin-bottom:18px}
+.outline h4{margin:0 0 4px;color:#22384f;font-size:1.08rem}
+.outline .verse{font-style:italic;color:#44506a}
+.outline p{margin:4px 0}
+.questions li{margin-bottom:10px}
+.prayer li{margin-bottom:6px}
+.about ul{padding-left:20px}
+.about li{margin-bottom:8px}
+footer{padding:10px 20px 40px;color:var(--muted);font-size:.85rem;font-family:system-ui,sans-serif}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.hero h1{font-size:2.2rem}}
+@media print{
+  .hero,.about,#builder,footer,.result-head .actions{display:none}
+  body{background:#fff}.card{border:0;box-shadow:none;padding:0 0 12px}
+}

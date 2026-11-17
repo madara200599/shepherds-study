@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shepherd's Study — AI Sermon &amp; Small-Group Studio</title>
+<meta name="description" content="Turn a Bible passage into a sermon outline, supporting verses, and small-group discussion questions — with AI, reviewed by a human, grounded in Scripture.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">AI for Church Hackathon 2026 &middot; Discipleship &amp; Spiritual Growth</p>
+    <h1>Shepherd&rsquo;s Study</h1>
+    <p class="tagline">From one passage to a whole Sunday: a sermon outline, supporting
+    Scripture, and small-group discussion &mdash; drafted by AI, finished by a pastor.</p>
+    <p class="note">Every AI draft is labelled as a draft. Scripture is quoted from the
+    public-domain King James Version. Always check the text in your own Bible before you preach it.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card" id="builder">
+    <h2>Build your study</h2>
+    <form id="genForm">
+      <div class="grid">
+        <label>Main passage
+          <input id="passage" type="text" value="John 3:16" placeholder="e.g. Psalm 23, Romans 8:28, Luke 15:11-32" required>
+        </label>
+        <label>Theme / big idea (optional)
+          <input id="theme" type="text" placeholder="e.g. God's love for the world" value="God's love for the world">
+        </label>
+        <label>Audience
+          <select id="audience">
+            <option>Sunday congregation (mixed ages)</option>
+            <option>Youth group</option>
+            <option>New believers</option>
+            <option>Small-group leaders</option>
+            <option>Children&rsquo;s ministry</option>
+          </select>
+        </label>
+        <label>Sermon points
+          <select id="points">
+            <option value="3" selected>3 points (classic)</option>
+            <option value="2">2 points (short)</option>
+            <option value="4">4 points (deep dive)</option>
+          </select>
+        </label>
+        <label>Sermon length
+          <select id="length">
+            <option>20 minutes</option>
+            <option selected>30 minutes</option>
+            <option>40 minutes</option>
+          </select>
+        </label>
+        <label>Discussion questions
+          <select id="qcount">
+            <option value="4">4 questions</option>
+            <option value="5" selected>5 questions</option>
+            <option value="6">6 questions</option>
+          </select>
+        </label>
+      </div>
+      <div class="actions">
+        <button type="submit" id="goBtn">Generate study &darr;</button>
+        <button type="button" class="ghost" id="sample1">Try: Psalm 23</button>
+        <button type="button" class="ghost" id="sample2">Try: The Prodigal Son</button>
+      </div>
+      <p class="engine" id="engineNote">Engine: free on-device fallback is always available; live AI draft uses the
+      public Pollinations text API (no key, no account) when reachable.</p>
+    </form>
+    <div id="status" class="status" hidden></div>
+  </section>
+
+  <section id="results" hidden>
+    <div class="card result-head">
+      <p class="eyebrow">AI DRAFT &mdash; review before use</p>
+      <h2 id="rTitle"></h2>
+      <p class="bigidea"><strong>Big idea:</strong> <span id="rBigIdea"></span></p>
+      <p class="meta"><span id="rMeta"></span> &middot; <span id="rEngine"></span></p>
+      <div class="actions">
+        <button id="copyBtn" type="button">Copy as Markdown</button>
+        <button id="dlBtn" type="button">Download .md</button>
+        <button id="printBtn" type="button">Print</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Memory verse</h3>
+      <blockquote id="rMemory"></blockquote>
+    </div>
+
+    <div class="card">
+      <h3>Sermon outline</h3>
+      <ol id="rOutline" class="outline"></ol>
+    </div>
+
+    <div class="card">
+      <h3>Application &mdash; this week</h3>
+      <p id="rApplication"></p>
+    </div>
+
+    <div class="card">
+      <h3>Small-group discussion</h3>
+      <ol id="rQuestions" class="questions"></ol>
+    </div>
+
+    <div class="card">
+      <h3>Prayer points</h3>
+      <ul id="rPrayer" class="prayer"></ul>
+    </div>
+
+    <div class="card">
+      <h3>Closing</h3>
+      <p id="rClosing"></p>
+    </div>
+  </section>
+
+  <section class="card about">
+    <h2>How it works &amp; why you can trust it</h2>
+    <ul>
+      <li><strong>AI drafts, humans decide.</strong> The outline, questions and prayer points are a
+      starting draft. A pastor reviews every word before it reaches a congregation.</li>
+      <li><strong>Scripture stays Scripture.</strong> Verses are quoted from the public-domain KJV and
+      shown with their reference, so anyone can verify them in seconds.</li>
+      <li><strong>Works offline too.</strong> If the live AI service is unreachable, a built-in study
+      engine (curated verse library + sermon structure) produces a complete study on your device.
+      Nothing you type leaves the browser in offline mode.</li>
+      <li><strong>No accounts, no tracking, no cost.</strong> No sign-up, no data collection, no
+      payment. Built for the AI for Church Hackathon 2026 (Oct 30 &ndash; Nov 27, 2026).</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>Shepherd&rsquo;s Study &mdash; built for the AI for Church Hackathon 2026. Scripture quotations
+  are from the King James Version (public domain). AI-generated content may contain errors;
+  verify all Scripture and teaching before use.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
